@@ -429,6 +429,10 @@ function decorateButtons(element) {
           a.className = 'button'; // default
           up.classList.add('button-container');
         }
+        if (a.href.includes('/posts')) {
+          a.classList.add('post-link');
+          a.classList.remove('button');
+        }
         if (
           up.childNodes.length === 1
           && up.tagName === 'STRONG'

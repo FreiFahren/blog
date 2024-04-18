@@ -19,6 +19,10 @@
   --dark-color: #ccc;
   --text-color: black;
 
+  --color-black: #000;
+  --color-blue: #0075FF;
+
+
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
   --heading-font-family: var(--body-font-family);
@@ -128,7 +132,7 @@ a:any-link {
 
 a:hover {
   text-decoration: underline;
-  color: var(--link-hover-color);
+  color: var( --color-blue);
 }
 
 /* buttons */
@@ -137,23 +141,23 @@ a.button:any-link, button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
   padding: 5px 30px;
   text-align: center;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: var(--color-black);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 4px;
 }
 
+
 a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
+  background-color: var(--color-blue);
   cursor: pointer;
 }
 
@@ -166,6 +170,28 @@ a.button.secondary, button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color)
+}
+
+a.post-link {
+    background-color: transparent;
+    color: var(--color-black);
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    padding-right: 15px;
+}
+
+a.post-link::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--color-black);
+    border-top: 2px solid var(--color-black);
+    transform: translateY(-50%) rotate(45deg);
+    pointer-events: none;
 }
 
 main img {
